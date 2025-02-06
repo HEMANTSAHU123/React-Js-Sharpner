@@ -5,11 +5,12 @@ import viteLogo from '/vite.svg'
 
 function App() {
   return (
-    <>
+    
       <div>
-        <h1> </h1>
+     <h2>let's  get started</h2>
+<p>I am learning react</p>
        </div>
-    </>
+  
   )
 }
 
