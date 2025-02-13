@@ -1,17 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
+import React, {useState,Fragment}from 'react';
+import AddUsers from './components/Users/AddUsers'
+import UserList from './components/Users/UserList';
 
 function App() {
+  const[userList,setUserList]=useState([]);
+  const addUserHandler=(Uname,Uage)=>{
+setUserList((prevUserList)=>{
+return [
+  
+    ...prevUserList,
+    {
+    name:Uname,
+    age:Uage,
+    id:Math.random().toString()
+  }
+
+]
+})
+  }
   return (
     
-      <div>
-     <h2>let's  get started</h2>
-<p>I am learning react</p>
-       </div>
+      <Fragment>
+    <AddUsers onadduser={addUserHandler} />
+    <UserList users={userList}/>
+       </Fragment>
   
   )
 }
 
-export default App
+export default App;
